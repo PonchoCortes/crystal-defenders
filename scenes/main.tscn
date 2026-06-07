@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bvx8qm3p5rn1v"]
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_level"]
+[ext_resource type="Script" path="res://scripts/trajectory.gd" id="2_trajectory"]
+[ext_resource type="PackedScene" uid="uid://dqkp5x7n8rqjw" path="res://scenes/ui/hud.tscn" id="3_hud"]
+[node name="Level" type="Node2D"]
+script = ExtResource("1_level")
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(640, 360)
+[node name="GrenadeSpawn" type="Node2D" parent="."]
+position = Vector2(100, 500)
+[node name="Trajectory" type="Line2D" parent="."]
+width = 4.0
+default_color = Color(1, 1, 1, 0.6)
+script = ExtResource("2_trajectory")
+[node name="CanvasLayer" parent="."]
+[node name="HUD" parent="CanvasLayer" instance=ExtResource("3_hud")]

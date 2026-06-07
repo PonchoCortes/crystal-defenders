@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dmwfbx4hp8epl"]
+[ext_resource type="Script" path="res://scripts/grenade.gd" id="1_grenade"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_1"]
+radius = 14.0
+[node name="Grenade" type="RigidBody2D" groups=["projectile"]]
+collision_layer = 8
+collision_mask = 5
+mass = 0.5
+gravity_scale = 1.0
+contact_monitor = true
+max_contacts_reported = 4
+script = ExtResource("1_grenade")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1")
+[node name="Trail2D" type="Line2D" parent="."]
+width = 6.0
+default_color = Color(0.3, 1, 0.4, 0.6)
+[node name="FuseTimer" type="Timer" parent="."]
+one_shot = true
